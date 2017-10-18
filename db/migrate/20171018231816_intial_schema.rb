@@ -12,6 +12,24 @@ class IntialSchema < ActiveRecord::Migration[5.1]
 
   create_table :catergories do |t|
       t.string  :name
-  end 
+  end
 
+  create_table :skills do |t|
+      t.string :name
+  end
+  create_table  :proposals  do |t|
+      t.integer :bid
+      t.text    :description
+      t.timestamps
+  end
+
+  create_table  :abilities  do |t|
+  end
+
+  add_reference :gigs, :catergory, index: true
+  add_reference :proposals, :gig, index:  true
+  add_reference :abilities, :gig, index:  true
+  add_reference :abilities, :skill, index: true
+
+end
 end
