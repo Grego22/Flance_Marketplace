@@ -8,6 +8,7 @@ class IntialSchema < ActiveRecord::Migration[5.1]
       t.boolean :open, default: true
       t.integer :awarded_proposal
       t.timestamps
+    end
   end
 
   create_table :catergories do |t|
